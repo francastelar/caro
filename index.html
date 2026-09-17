@@ -1,57 +1,18 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffd9eb">
-<title>Sorpresa para Caro 💕</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffdceb"><title>Sorpresa para Caro 💕</title>
 <style>
-:root{--pink:#ed69a5;--dark:#5c3650;--cream:#fff9fc}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--dark);
-background:radial-gradient(circle at 20% 10%,#fff 0 4%,transparent 5%),linear-gradient(135deg,#ffe8f3,#eee2ff)}
-.card{width:min(560px,100%);background:rgba(255,255,255,.93);border:3px solid #fff;border-radius:30px;padding:28px;text-align:center;box-shadow:0 18px 55px #9b5c7d33;position:relative;overflow:hidden}
-h1{margin:.2em 0;color:#d94e91;font-size:clamp(28px,7vw,44px)}
-p{font-size:18px;line-height:1.5}
-button,a.button{border:0;border-radius:999px;padding:15px 24px;background:var(--pink);color:#fff;font-size:17px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 8px 20px #ed69a555}
-#sorpresa{display:none}
-img{width:100%;border-radius:22px;margin:16px 0;box-shadow:0 10px 28px #0002}
-.small{font-size:14px;opacity:.75}
-.confetti{position:fixed;top:-20px;width:10px;height:16px;border-radius:3px;animation:fall 2.8s linear forwards;pointer-events:none}
-@keyframes fall{to{transform:translate(var(--x),110vh) rotate(720deg);opacity:.85}}
-</style>
-</head>
-<body>
-<main class="card">
-<section id="inicio">
-<div style="font-size:48px">🎀 🔐 💕</div>
-<h1>Caro, tenés una sorpresa</h1>
-<p>Una personita preparó algo especialmente para vos… 🤭</p>
-<button onclick="descubrir()">Descubrir sorpresa 🎁</button>
-<p class="small">Solo apto para maestras especiales ✨</p>
-</section>
-<section id="sorpresa">
-<h1>¡Feliz Día del Maestro, Caro! 💕</h1>
-<p>Te quiero mucho 💗</p>
-<img src="tarjeta-caro.png" alt="Tarjeta especial para Caro">
-<a class="button" href="https://www.youtube.com/shorts/RV_b1BRkDFM" target="_blank" rel="noopener">▶ Ver mi mensaje sorpresa</a>
-<p>Con mucho cariño 💕</p>
-</section>
-</main>
-<script>
-function descubrir(){
- document.getElementById('inicio').style.display='none';
- document.getElementById('sorpresa').style.display='block';
- const symbols=['#ff78ad','#b990e8','#ffd45c','#75d9c5'];
- for(let i=0;i<75;i++){
-   const c=document.createElement('i'); c.className='confetti';
-   c.style.left=Math.random()*100+'vw';
-   c.style.background=symbols[Math.floor(Math.random()*symbols.length)];
-   c.style.setProperty('--x',(Math.random()*220-110)+'px');
-   c.style.animationDelay=(Math.random()*.7)+'s';
-   document.body.appendChild(c); setTimeout(()=>c.remove(),3800);
- }
-}
-</script>
-</body>
-</html>
+*{box-sizing:border-box} body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;font-family:system-ui,sans-serif;color:#57394c;background:linear-gradient(145deg,#ffe8f3,#eee5ff 55%,#e7fbff)}
+.panel{width:min(590px,100%);padding:30px 24px;text-align:center;background:#fffffff2;border:3px solid white;border-radius:32px;box-shadow:0 20px 60px #8e52792c}
+h1,h2{color:#d94f91} h1{font-size:clamp(30px,8vw,48px)} h2{font-size:clamp(25px,7vw,38px)} p{font-size:18px;line-height:1.55}
+.btn{display:inline-block;border:0;border-radius:999px;padding:15px 23px;margin:8px;background:#ed69a5;color:white;font-weight:800;font-size:17px;text-decoration:none;cursor:pointer;box-shadow:0 9px 22px #ed69a555}
+.secondary{background:#9d7cdb} .hidden{display:none} img{width:100%;border-radius:24px;margin:14px 0;box-shadow:0 13px 32px #0002}
+.note{margin:18px auto;padding:16px;border-radius:20px;background:#fff0f7;border:2px dashed #f39ac1} .signature{font-size:21px;font-weight:800;color:#d94f91}
+.heart{position:fixed;top:-30px;pointer-events:none;animation:fall 3.2s linear forwards;font-size:22px} @keyframes fall{to{transform:translate(var(--x),110vh) rotate(540deg);opacity:.7}}
+</style></head><body><main class="panel">
+<section id="intro"><div style="font-size:44px">🎀 🔐 💕</div><h1>Caro, tenemos una misión secreta para vos…</h1><p>Una personita preparó algo con muchísimo cariño.<br>¿Estás lista para descubrirlo? 🤭</p><button class="btn" onclick="show('tarjeta')">Abrir mi sorpresa 💕</button><p>✨ Solo apto para maestras muy especiales ✨</p></section>
+<section id="tarjeta" class="hidden"><h2>¡Feliz Día del Maestro, Caro! 💕</h2><p>Hay personas que dejan huellitas lindas para siempre…</p><img src="tarjeta-caro.png" alt="Tarjeta especial para Caro"><div class="note">Gracias por enseñarme, acompañarme y compartir tantos momentos conmigo. 💗</div><button class="btn secondary" onclick="show('final')">🎬 Pero todavía falta algo…</button></section>
+<section id="final" class="hidden"><div style="font-size:44px">🤫 🎬 💕</div><h2>Hay un mensaje para vos</h2><p>Preparé una última sorpresa especialmente para vos.</p><a class="btn" href="https://photos.app.goo.gl/2w4D9xt3qZzSQ6Ff9" target="_blank" rel="noopener">▶ Ver mi mensaje sorpresa</a><div class="note">Feliz día, Caro. 💕<br><span class="signature">Con cariño, Delfina 🎀</span></div><button class="btn secondary" onclick="show('tarjeta',false)">← Volver a la tarjeta</button></section>
+</main><script>
+function rain(){let a=["💕","💗","🎀","✨","♡"];for(let i=0;i<55;i++){let e=document.createElement("span");e.className="heart";e.textContent=a[Math.floor(Math.random()*a.length)];e.style.left=Math.random()*100+"vw";e.style.setProperty("--x",(Math.random()*220-110)+"px");e.style.animationDelay=Math.random()*.8+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),4500)}}
+function show(id,r=true){["intro","tarjeta","final"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden");if(r)rain();window.scrollTo(0,0)}
+</script></body></html>
