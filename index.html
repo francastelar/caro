@@ -1,18 +1,54 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffdceb"><title>Sorpresa para Caro 💕</title>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffe2f0"><title>Sorpresa para Caro 💕</title>
 <style>
-*{box-sizing:border-box} body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;font-family:system-ui,sans-serif;color:#57394c;background:linear-gradient(145deg,#ffe8f3,#eee5ff 55%,#e7fbff)}
-.panel{width:min(590px,100%);padding:30px 24px;text-align:center;background:#fffffff2;border:3px solid white;border-radius:32px;box-shadow:0 20px 60px #8e52792c}
-h1,h2{color:#d94f91} h1{font-size:clamp(30px,8vw,48px)} h2{font-size:clamp(25px,7vw,38px)} p{font-size:18px;line-height:1.55}
-.btn{display:inline-block;border:0;border-radius:999px;padding:15px 23px;margin:8px;background:#ed69a5;color:white;font-weight:800;font-size:17px;text-decoration:none;cursor:pointer;box-shadow:0 9px 22px #ed69a555}
-.secondary{background:#9d7cdb} .hidden{display:none} img{width:100%;border-radius:24px;margin:14px 0;box-shadow:0 13px 32px #0002}
-.note{margin:18px auto;padding:16px;border-radius:20px;background:#fff0f7;border:2px dashed #f39ac1} .signature{font-size:21px;font-weight:800;color:#d94f91}
-.heart{position:fixed;top:-30px;pointer-events:none;animation:fall 3.2s linear forwards;font-size:22px} @keyframes fall{to{transform:translate(var(--x),110vh) rotate(540deg);opacity:.7}}
-</style></head><body><main class="panel">
-<section id="intro"><div style="font-size:44px">🎀 🔐 💕</div><h1>Caro, tenemos una misión secreta para vos…</h1><p>Una personita preparó algo con muchísimo cariño.<br>¿Estás lista para descubrirlo? 🤭</p><button class="btn" onclick="show('tarjeta')">Abrir mi sorpresa 💕</button><p>✨ Solo apto para maestras muy especiales ✨</p></section>
-<section id="tarjeta" class="hidden"><h2>¡Feliz Día del Maestro, Caro! 💕</h2><p>Hay personas que dejan huellitas lindas para siempre…</p><img src="tarjeta-caro.png" alt="Tarjeta especial para Caro"><div class="note">Gracias por enseñarme, acompañarme y compartir tantos momentos conmigo. 💗</div><button class="btn secondary" onclick="show('final')">🎬 Pero todavía falta algo…</button></section>
-<section id="final" class="hidden"><div style="font-size:44px">🤫 🎬 💕</div><h2>Hay un mensaje para vos</h2><p>Preparé una última sorpresa especialmente para vos.</p><a class="btn" href="https://photos.app.goo.gl/2w4D9xt3qZzSQ6Ff9" target="_blank" rel="noopener">▶ Ver mi mensaje sorpresa</a><div class="note">Feliz día, Caro. 💕<br><span class="signature">Con cariño, Delfina 🎀</span></div><button class="btn secondary" onclick="show('tarjeta',false)">← Volver a la tarjeta</button></section>
-</main><script>
-function rain(){let a=["💕","💗","🎀","✨","♡"];for(let i=0;i<55;i++){let e=document.createElement("span");e.className="heart";e.textContent=a[Math.floor(Math.random()*a.length)];e.style.left=Math.random()*100+"vw";e.style.setProperty("--x",(Math.random()*220-110)+"px");e.style.animationDelay=Math.random()*.8+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),4500)}}
-function show(id,r=true){["intro","tarjeta","final"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden");if(r)rain();window.scrollTo(0,0)}
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#57394c}
+body{background:linear-gradient(145deg,#ffe7f2,#eee4ff 58%,#e7faff)}
+main{min-height:100vh;display:grid;place-items:center;padding:16px}
+.panel{width:min(600px,100%);background:#fffffff2;border:3px solid #fff;border-radius:30px;padding:25px 20px;text-align:center;box-shadow:0 18px 55px #80526f30}
+h1,h2{color:#d94f91;line-height:1.08} h1{font-size:clamp(31px,8vw,48px)} h2{font-size:clamp(27px,7vw,40px)}
+p{font-size:18px;line-height:1.5}.hidden{display:none}
+.btn{border:0;border-radius:999px;padding:15px 23px;margin:9px;background:#ed69a5;color:#fff;font-size:17px;font-weight:800;cursor:pointer;box-shadow:0 8px 20px #ed69a555}
+.secondary{background:#9b7bd5}
+.cardimg{width:100%;border-radius:22px;box-shadow:0 12px 28px #0002;margin:10px 0 15px}
+.video-wrap{position:relative;width:100%;max-width:430px;margin:12px auto;border-radius:25px;overflow:hidden;background:#111;box-shadow:0 14px 35px #0003}
+video{display:block;width:100%;max-height:78vh;object-fit:contain;background:#111}
+.note{background:#fff0f7;border:2px dashed #f39ac1;border-radius:20px;padding:15px;margin:16px auto}
+.sig{font-weight:900;font-size:21px;color:#d94f91}
+.heart{position:fixed;top:-35px;pointer-events:none;font-size:23px;animation:fall 3.4s linear forwards;z-index:20}
+@keyframes fall{to{transform:translate(var(--x),110vh) rotate(600deg);opacity:.7}}
+</style></head>
+<body><main><article class="panel">
+<section id="intro">
+<div style="font-size:46px">🎀 🔐 💕</div><h1>Caro, tenemos una misión secreta para vos…</h1>
+<p>Una personita preparó algo con muchísimo cariño.<br>¿Estás lista? 🤭</p>
+<button class="btn" onclick="show('card')">Abrir mi sorpresa 💕</button>
+<p>✨ Solo apto para maestras muy especiales ✨</p>
+</section>
+<section id="card" class="hidden">
+<h2>¡Feliz Día del Maestro, Caro! 💕</h2>
+<p>Hay personas que dejan huellitas lindas para siempre…</p>
+<img class="cardimg" src="tarjeta-caro.png" alt="Tarjeta para Caro">
+<div class="note">Gracias por enseñarme, acompañarme y compartir tantos momentos conmigo. 💗</div>
+<button class="btn secondary" onclick="show('movie')">🎬 Pero todavía falta algo…</button>
+</section>
+<section id="movie" class="hidden">
+<div style="font-size:42px">🤫 🎬 💕</div><h2>Hay un mensaje para vos</h2>
+<p>Tocá ▶ y mirá la última sorpresa.</p>
+<div class="video-wrap">
+<video id="vid" controls playsinline preload="metadata">
+<source src="video-delfina.mp4" type="video/mp4">
+Tu navegador no puede reproducir este video.
+</video>
+</div>
+<div id="ending" class="note hidden">Feliz día, Caro 💕<br><span class="sig">Con cariño, Delfina 🎀</span></div>
+<button class="btn secondary" onclick="show('card')">← Volver a la tarjeta</button>
+</section>
+</article></main>
+<script>
+function rain(){let a=["💕","💗","🎀","✨","♡"];for(let i=0;i<55;i++){let e=document.createElement("span");e.className="heart";e.textContent=a[Math.floor(Math.random()*a.length)];e.style.left=Math.random()*100+"vw";e.style.setProperty("--x",(Math.random()*220-110)+"px");e.style.animationDelay=Math.random()*.7+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),4500)}}
+function show(id){["intro","card","movie"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden");let v=document.getElementById("vid");if(id!=="movie"&&!v.paused)v.pause();rain();window.scrollTo({top:0,behavior:"smooth"})}
+document.getElementById("vid").addEventListener("ended",()=>{document.getElementById("ending").classList.remove("hidden");rain()});
 </script></body></html>
